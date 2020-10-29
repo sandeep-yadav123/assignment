@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','App\Http\Controllers\AssignmentController@index');
+Route::post('/save','App\Http\Controllers\AssignmentController@store')->name('save.assignment');
+Route::post('/right/selected','App\Http\Controllers\AssignmentController@rightSelected')->name('right.selected');
+Route::post('/left/selected','App\Http\Controllers\AssignmentController@leftSelected')->name('left.selected');
